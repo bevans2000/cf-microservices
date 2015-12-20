@@ -5,6 +5,6 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface CaseRepository extends CrudRepository<Case, Long> {
 
-    Case findByUprn(String uprn);
+    //Case findByUprn(String uprn);
 
 }
