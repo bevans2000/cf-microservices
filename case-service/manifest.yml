@@ -1,0 +1,8 @@
+---
+applications:
+- name: case-service
+  memory: 512M
+  instances: 1
+  host: case-service-${random-word}
+  path: target/case-service-0.0.1-SNAPSHOT.jar
+
