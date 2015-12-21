@@ -1,0 +1,10 @@
+server:
+  # Picks up VCAP_APPLICATION_PORT if it exists
+  port: ${PORT:8761}
+
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    server:
+      waitTimeInMsWhenSyncEmpty: 0
