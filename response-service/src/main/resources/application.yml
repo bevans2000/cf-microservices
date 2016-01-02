@@ -1,0 +1,20 @@
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8761/eureka/
+server:
+  port: 8081
+
+---
+spring:
+  profiles: cloud
+server:
+  port: 8080  
+eureka:
+  instance:
+    hostname: ${APPLICATION_DOMAIN}
+    nonSecurePort: 80
+  client:
+    serviceUrl:
+      defaultZone: https://eureka-server-ons.trial.cf.paas.alphagov.co.uk/eureka
