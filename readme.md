@@ -13,14 +13,20 @@ When deployed locally via **mvn spring-boot:run**
 * Eureka Server @ http://localhost:8761
 * Case service HAL Browser @ http://localhost:8081/api/browser/index.html#
 * Case service - Case repo @ http://localhost:8081/api/cases
+* Response service - submit responses @ http://localhost:8082/responses
 
 All services have the Spring Acuator (https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-endpoints.html) senabled. Interesting end points
 * http:XXX:YYY/health - general status
 * http:XXX:YYY/mappings - all registered endpoints
 * http:XXX:YYY/metrics - lots of useful counters
 
+## Running some examples
+There are a number of example responses for submission in the response-service/examples directory. These can be POSTed via curl.
+
+curl -X POST -d @q123.json http://localhost:8082/responses --header "Content-Type:application/json"
+
 ## Deploy services on Cloud Foundry
 The **manifest.yml** defines the deployment details. Note the application.yml of the individual apps may also use the profile *cloud* to override some details.
 
 ### Service URLs on CloudFoundry
-All services hosted in the Gov. Trial PaaS must be accessed via HTTPS from the internet. This means that the services can not used specific non standard ports but must use port 8080. There is no problem of clashing of ports because each Cloud Foundry service is hosted oa a dedicated domain, i.e. different virtual hostnames.
+All services hosted in the Gov. Trial PaaS must be accessed via HTTPS from the internet. This means that the services can not used specific non standard ports but must use port 8080. There is no problem of clashing of ports because each Cloud Foundry service is hosted on a dedicated domain, i.e. different virtual hostnames. The same paths apply as above but each service now has a dedicated fully qualified host name; the host name can be discovered via the ''cf services'' command.
