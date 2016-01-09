@@ -13,8 +13,8 @@ server:
   port: 8080  
 eureka:
   instance:
-    hostname: ${APPLICATION_DOMAIN}
+    # hostname: ${APPLICATION_DOMAIN}
     nonSecurePort: 80
   client:
     serviceUrl:
-      defaultZone: https://eureka-server-ons.trial.cf.paas.alphagov.co.uk/eureka
+      defaultZone: https://eureka-server-ons.trial.cf.paas.alphagov.co.uk/eureka/

@@ -1,0 +1,15 @@
+---
+# Common properties
+memory: 512M
+instances: 1
+applications:
+- name: eureka-server
+  host: eureka-server-ons
+  path: eureka-server/target/eureka-server-0.0.1-SNAPSHOT.jar
+- name: case-service
+  host: case-service-ons
+  path: case-service/target/case-service-0.0.1-SNAPSHOT.jar
+- name: response-service
+  host: response-service-ons
+  path: response-service/target/response-service-0.0.1-SNAPSHOT.jar
+

@@ -26,7 +26,13 @@ There are a number of example responses for submission in the response-service/e
 curl -X POST -d @q123.json http://localhost:8082/responses --header "Content-Type:application/json"
 
 ## Deploy services on Cloud Foundry
-The **manifest.yml** defines the deployment details. Note the application.yml of the individual apps may also use the profile *cloud* to override some details.
+The **manifest.yml** defines the deployment details. Note the application.yml of the individual apps may also use the profile *cloud* to override some details. The services must be packaged before via ''mvn package''.
+Individual services can be deployed as
+
+cf push
+
+There is also a top-level manifest that deploys the whole solution.
 
 ### Service URLs on CloudFoundry
 All services hosted in the Gov. Trial PaaS must be accessed via HTTPS from the internet. This means that the services can not used specific non standard ports but must use port 8080. There is no problem of clashing of ports because each Cloud Foundry service is hosted on a dedicated domain, i.e. different virtual hostnames. The same paths apply as above but each service now has a dedicated fully qualified host name; the host name can be discovered via the ''cf services'' command.
+Note that the URLs must be unique across the whole of the GDS PaaS so these are suffix with ''-ons''.

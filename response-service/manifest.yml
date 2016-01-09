@@ -3,6 +3,7 @@ applications:
 - name: response-service
   memory: 512M
   instances: 1
-  host: response-service-${random-word}
+  # host: response-service-${random-word}
+  host: response-service-ons
   path: target/response-service-0.0.1-SNAPSHOT.jar
 
