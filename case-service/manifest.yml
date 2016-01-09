@@ -6,4 +6,6 @@ applications:
   # host: case-service-${random-word}
   host: case-service-ons
   path: target/case-service-0.0.1-SNAPSHOT.jar
+  env:
+    EUREKA_URL: https://eureka-server-ons.trial.cf.paas.alphagov.co.uk/eureka/
 

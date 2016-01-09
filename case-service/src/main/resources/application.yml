@@ -18,8 +18,10 @@ server:
   port: 8080  
 eureka:
   instance:
-    # hostname: ${APPLICATION_DOMAIN}
+    # This is defined as part of Cloud Foundry, see cf envs <APP NAME>
+    hostname: ${vcap.application.uris[0]}
     nonSecurePort: 80
   client:
     serviceUrl:
-      defaultZone: https://eureka-server-ons.trial.cf.paas.alphagov.co.uk/eureka/
+      # Defined as a Cloud Foundry app property
+      defaultZone: ${EUREKA_URL}
