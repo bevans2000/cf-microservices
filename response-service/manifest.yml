@@ -7,5 +7,5 @@ applications:
   host: response-service-ons
   path: target/response-service-0.0.1-SNAPSHOT.jar
   env:
-    EUREKA_URL: https://eureka-server-ons.trial.cf.paas.alphagov.co.uk/eureka/
+    EUREKA_URL: https://eureka-service-ons.trial.cf.paas.alphagov.co.uk/eureka/
 
