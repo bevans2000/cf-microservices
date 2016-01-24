@@ -10,7 +10,7 @@ There are 2 micro services that each provide a web service interface. They use t
 ## Services Locally Deployed
 When deployed locally via **mvn spring-boot:run**
 
-* Eureka Server @ http://localhost:8761
+* Eureka Service @ http://localhost:8761
 * Case service HAL Browser @ http://localhost:8081/api/browser/index.html#
 * Case service - Case repo @ http://localhost:8081/api/cases
 * Response service - submit responses @ http://localhost:8082/responses
