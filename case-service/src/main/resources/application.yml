@@ -19,8 +19,11 @@ server:
 eureka:
   instance:
     # This is defined as part of Cloud Foundry, see cf envs <APP NAME>
+    # Having this set means the service is accessed from outside the CloudFoundry environment. It should be accessed from the inside
     hostname: ${vcap.application.uris[0]}
     nonSecurePort: 80
+    # This registers with the server using IP address    
+    # preferIpAddress: true
   client:
     serviceUrl:
       # Defined as a Cloud Foundry app property
