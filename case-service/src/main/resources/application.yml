@@ -21,10 +21,16 @@ eureka:
     # This is defined as part of Cloud Foundry, see cf envs <APP NAME>
     # Having this set means the service is accessed from outside the CloudFoundry environment. It should be accessed from the inside
     hostname: ${vcap.application.uris[0]}
-    nonSecurePort: 80
-    # This registers with the server using IP address    
+    nonSecurePort: 80	
+
+    # Attempt to register the secure HTTPS port exposed via the GDS Cloud Foundry
+    securePortEnabled: true
+    securePort: 443
+
+    # This registers with the server using IP address
+    # Not advisable within CloudFoundry where inter-app communication is blocked by default	
     # preferIpAddress: true
   client:
     serviceUrl:
-      # Defined as a Cloud Foundry app property
+      # Defined as a Cloud Foundry app property;  see cf envs <APP NAME>
       defaultZone: ${EUREKA_URL}

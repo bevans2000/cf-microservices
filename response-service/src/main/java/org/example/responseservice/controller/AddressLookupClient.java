@@ -64,7 +64,9 @@ public class AddressLookupClient {
 		
 		// Enabled the Ribbon client so autowired RestTemplate becomes Ribbon aware
 		//String serviceBase = getServiceUrl(CASE_SERVICE_NAME, "http://localhost:8082");
-		String serviceBase = "http://" + CASE_SERVICE_NAME;
+		
+		// TODO: The protocol might change depending upon the service declaration of the remote service 
+		String serviceBase = "https://" + CASE_SERVICE_NAME;
 		
 	    final String uri = serviceBase + CASE_ADDRESS_URL;
 	     

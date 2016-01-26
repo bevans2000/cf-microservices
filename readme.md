@@ -36,3 +36,6 @@ There is also a top-level manifest that deploys the whole solution.
 ### Service URLs on CloudFoundry
 All services hosted in the Gov. Trial PaaS must be accessed via HTTPS from the internet. This means that the services can not used specific non standard ports but must use port 8080. There is no problem of clashing of ports because each Cloud Foundry service is hosted on a dedicated domain, i.e. different virtual hostnames. The same paths apply as above but each service now has a dedicated fully qualified host name; the host name can be discovered via the ''cf services'' command.
 Note that the URLs must be unique across the whole of the GDS PaaS so these are suffix with ''-ons''.
+
+## Problems
+The AddressLookupClinet in the response-service explicitly declares "https" but when running locally outside of CloudFoundry it is "http". Should be way to configure this in the application settings according to a Cloud profile.
