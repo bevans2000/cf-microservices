@@ -3,9 +3,9 @@ Example of using a MicroService application deployed on CloudFoundry.
 
 ## Overview
 There are 2 micro services that each provide a web service interface. They use the Netflix OSS wrapped in the Spring Cloud project. There is also a Netflix Eureka service deployed that provides a service discovery capability. There are three sub-projects:-
-* eureka-server - Eureka wrapper. Cna be deployed locally or in CloudFoundry. This is required because in Cloud Foundry there is no DNS or discovery capabilities such that microservices have to be registered before they cna be called.
-* case-server - A basic REST server that utilises Spring Boot. It incorporates Spring JPA and uses an non-persistent in memory database. The Case object is the only entity persisted.
-* response-service - Accepts submitted Responses as a POST. These are enriched with Address information retrieved form the Case service before publishing onto a Redis channel for later consumption.
+ * eureka-server - Eureka wrapper. Can be deployed locally or in CloudFoundry. This is required because in Cloud Foundry there is no DNS or discovery capabilities such that microservices have to be registered before they can be called.
+  * case-server - A basic REST server that utilizes Spring Boot. It incorporates Spring JPA and uses an non-persistent in memory database. The Case object is the only entity persisted.
+  * response-service - Accepts submitted Responses as a POST. These are enriched with Address information retrieved form the Case service before publishing onto a Redis channel for later consumption.
 
 ## Services Locally Deployed
 When deployed locally via **mvn spring-boot:run**
@@ -15,7 +15,7 @@ When deployed locally via **mvn spring-boot:run**
 * Case service - Case repo @ http://localhost:8081/api/cases
 * Response service - submit responses @ http://localhost:8082/responses
 
-All services have the Spring Acuator (https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-endpoints.html) senabled. Interesting end points
+All services have the Spring Acuator (https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-endpoints.html) enabled. Interesting end points
 * http:XXX:YYY/health - general status
 * http:XXX:YYY/mappings - all registered endpoints
 * http:XXX:YYY/metrics - lots of useful counters
